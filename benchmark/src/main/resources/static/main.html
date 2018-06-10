@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+	
+	function goBenchmarking(e)
+	{
+		var radi = document.getElementById("radius").value;
+		var part = document.getElementById("particles").value;
+			
+		if(e == 'canvas')
+		{
+			location.href='canvas_animation.html/?particles=' + part + '&radius=' + radi;
+		}
+		else
+		{
+			location.href='svg_animation.html/?particles=' + part + '&radius=' + radi;
+			
+		}
+	}
+	
+	
+	</script>
+
+
+</head>
+<body>
+	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+			<span class="input-group-text" id="inputGroup-sizing-default" >Particle Radius</span>
+		</div>
+		<input id="radius" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="6">
+	</div>
+	<div class="input-group mb-3">
+		<div class="input-group-prepend" id="inputGroup-sizing-default">
+			<span class="input-group-text" >The Number of Particles</span>
+		</div>
+		<input id="particles" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="50">
+	</div>
+	<div class="buttons" style="margin-top:10px; margin-left: 10px;">
+		<button type="button" class="btn btn-primary" onclick="goBenchmarking('canvas')">Canvas Animation</button>
+		<button type="button" class="btn btn-warning" onclick="goBenchmarking('svg')">SVG Animation</button>
+	</div>
+
+</body>
+</html>
